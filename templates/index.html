@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="static/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Генератор QR-кодов</h1>
+        <p>Введите URL для генерации QR-кода</p>
+
+        <form action="/generate" method="post">
+            <div class="form-group">
+                <label for="url"></label>
+                <input type="text" id="url" name="url" placeholder="Введите URL" required>
+            </div>
+            <button type="submit">Сгенерировать QR-код</button>
+        </form>
+
+        {% if qr_code %}
+        <div class="qr-code">
+            <h2>Ваш QR-код:</h2>
+            <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Генератор QR-кодов © 2024 | <a href="https://github.com/PythonMarik">Github</a></p>
+    </footer>
+</body>
+
+</html>
