@@ -9,7 +9,7 @@
 ```
 git clone https://github.com/PythonMarik/QR-code-Generator
 cd QR-code-Generator
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ---
